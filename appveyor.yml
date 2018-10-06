@@ -1,0 +1,26 @@
+version: '0.1.{build}'
+image: Ubuntu1804
+branches:
+  only:
+  - master
+init:
+
+install:
+
+before_build:
+  # Display .NET Core version
+  - cmd: dotnet --version
+  # Display restore text
+  - cmd: dotnet restore ./TodoistRest.sln --verbosity m
+build_script:
+  - cmd: dotnet publish ./src/TodoistRest/TodoistRest.csproj
+after_build:
+
+artifacts:
+
+clone_depth: 1
+test_script:
+  - cmd: dotnet test ./tests/TodoistRest.Tests/TodoistRest.Tests.csproj
+on_finish:
+
+deploy: off
