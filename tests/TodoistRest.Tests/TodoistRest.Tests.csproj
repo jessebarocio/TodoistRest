@@ -14,7 +14,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\TodoistRest\TodoistRest.csproj" />
+    <ProjectReference Include="..\..\src\TodoistRest\TodoistRest.csproj" />
   </ItemGroup>
 
 </Project>
